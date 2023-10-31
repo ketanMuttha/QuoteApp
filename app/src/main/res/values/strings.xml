@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">QuoteApp</string>
+    <string name="login_screen_title">Welcome back</string>
+    <string name="login_screen_login">Login</string>
+    <string name="login_screen_user_name">Username</string>
+    <string name="login_screen_password">Password</string>
+    <string name="login_screen_sign_in">Sign In</string>
+    <string name="home_screen_title">Quotes</string>
+    <string name="home_screen_quote_service_error">Something went wrong, please try again later.</string>
+    <string name="home_Screen_card_item_author">By %s</string>
+</resources>

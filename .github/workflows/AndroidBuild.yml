@@ -1,0 +1,23 @@
+name: QuoteApp
+on: push
+
+jobs:
+  build:
+    runs-on : ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name : Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '18'
+          distribution: 'adopt'
+      - name : Build with Gradle
+        run : ./gradlew build
+      - name: Unit test
+        run: ./gradlew test
+      - name : Upload a build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: QuoteApp.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
