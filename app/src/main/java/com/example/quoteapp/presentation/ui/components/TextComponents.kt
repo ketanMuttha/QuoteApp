@@ -1,5 +1,6 @@
 package com.example.quoteapp.presentation.ui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -133,10 +134,15 @@ fun MyPasswordTextField(
 
 @Composable
 fun UnderLinesText(
-    value: String
+    value: String,
+    onClick: () -> Unit,
 ) {
     Text(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable {
+                onClick()
+            },
         text = value,
         style = TextStyle(
             fontWeight = FontWeight.Normal,

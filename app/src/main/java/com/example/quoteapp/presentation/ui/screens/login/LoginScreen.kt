@@ -1,5 +1,6 @@
 package com.example.quoteapp.presentation.ui.screens.login
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,7 +34,6 @@ import com.example.quoteapp.presentation.ui.navigation.NavigationHelper
  *  Job: To show a login screen.
  *  @author Ketan
  */
-private val TAG = "LoginScreen"
 @Composable
 fun LoginScreen(
     loginState: LoginState,
@@ -45,6 +46,7 @@ fun LoginScreen(
     onLoginSuccess: () -> Unit,
 ) {
 
+    val context = LocalContext.current
     NavigationHelper(
         shouldNavigate = {
             loginState.isSuccessfullyLoggedIn
@@ -98,7 +100,9 @@ fun LoginScreen(
                     onSingInClick()
                 }
                 Spacer(modifier = Modifier.height(20.dp))
-                UnderLinesText("Forgot your password")
+                UnderLinesText("Forgot your password") {
+                    Toast.makeText(context, "Yet to be implemented", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -107,6 +111,15 @@ fun LoginScreen(
 @Preview
 @Composable
 fun LoginScreenPreview() {
-    val navController = rememberNavController()
-    // LoginScreen(navController)
+    val loginState = LoginState()
+    LoginScreen(
+        loginState = loginState,
+        userNameValue = { "userName" },
+        passwordValue = { "password" },
+        buttonEnabled = { true },
+        onUserNameChanged = {},
+        onPasswordChanged = {},
+        onSingInClick = {},
+        onLoginSuccess = {},
+    )
 }
