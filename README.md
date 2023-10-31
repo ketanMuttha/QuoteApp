@@ -12,6 +12,8 @@
 
 # How to install this project
 1. Please install the latest Android studio (Mine is Android Studio Giraffe | 2022.3.1 Patch 2)
-2. Go to preferences-> search gradle- select Jdk 18 (Oracle) or you can download it from dropdown menu option.
+2. Pull this repo in the android studio
+3. Go to preferences-> search gradle- select Jdk 18 (Oracle) or you can download it from dropdown menu option.
+4. Sync and Run
    
 
