@@ -100,7 +100,8 @@ fun LoginScreen(
                     onSingInClick()
                 }
                 Spacer(modifier = Modifier.height(20.dp))
-                UnderLinesText("Forgot your password") {
+                val forgotCredentials = stringResource(id = R.string.login_screen_forgot_credentials)
+                UnderLinesText(forgotCredentials) {
                     Toast.makeText(context, "Yet to be implemented", Toast.LENGTH_SHORT).show()
                 }
             }
